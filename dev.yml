@@ -1,0 +1,8 @@
+- hosts: dev
+  become: yes
+  remote_user: ec2-user
+  vars:
+    username: la5test
+  tasks:
+    - name: "add user"
+      user: name={{ username }} group=wheel shell=/bin/bash

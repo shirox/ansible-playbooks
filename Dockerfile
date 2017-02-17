@@ -1,0 +1,4 @@
+FROM b4faa7a86d2f
+
+EXPOSE 22
+EXPOSE 80
