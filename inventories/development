@@ -1,0 +1,8 @@
+[webservers]
+amazon
+
+[dbservers]
+amazon
+
+[batchservers]
+amazon

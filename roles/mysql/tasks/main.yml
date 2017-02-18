@@ -1,0 +1,14 @@
+- name: "mysql install"
+  yum: name={{ item }} state=installed
+  with_items:
+    - mysql56
+    - mysql56-server
+
+- name: "set sysconfig network"
+  shell: echo NETWORKING=yes > /etc/sysconfig/network
+
+- name: "setup mysqld"
+  service: name=mysqld state=started
+
+- name: "add mysqld to chkconfig"
+  service: name=mysqld enabled=yes
