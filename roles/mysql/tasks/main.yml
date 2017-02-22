@@ -4,8 +4,13 @@
     - mysql56
     - mysql56-server
 
+- name: "is sysconfig network exists"
+  stat: path=/etc/sysconfig/network
+  register: is_sysconfig_network
+
 - name: "set sysconfig network"
   shell: echo NETWORKING=yes > /etc/sysconfig/network
+  when: not is_sysconfig_network.stat.exists
 
 - name: "setup mysqld"
   service: name=mysqld state=started

@@ -1,0 +1,5 @@
+- name: httpd restart
+  action: service name=httpd state=restarted
+
+- name: httpd enabled
+  action: service name=httpd enabled=yes

@@ -1,0 +1,8 @@
+- name: "httpd install"
+  yum: name=httpd24 state=installed
+
+- name: "set virtual host"
+  action: template src=vhost.conf.j2 dest=/etc/httpd/conf.d/vhost.conf
+  notify:
+    - httpd restart
+    - httpd enabled
