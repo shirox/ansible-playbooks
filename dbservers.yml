@@ -1,0 +1,7 @@
+- hosts: dbservers
+  become: yes
+  remote_user: ec2-user
+
+  roles:
+    - common
+    - mysql
