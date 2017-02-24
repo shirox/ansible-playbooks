@@ -1,0 +1,7 @@
+- name: "php install"
+  yum: name={{ item }} state=installed
+  with_items:
+    - php56
+    - php56-mbstring
+    - php56-mysqlnd
+    - uuid-php56
